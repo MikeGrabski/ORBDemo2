@@ -2,46 +2,46 @@
 <items version="2" >
 
     <item
-        jar="/Users/iosuser12/AndroidStudioProjects/ORBDemo2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/jars/classes.jar"
+        jar="/Users/iosuser11/Desktop/uresAnahit/ORBDemo2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
-        <dex dex="/Users/iosuser12/AndroidStudioProjects/ORBDemo2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.0.0_08943408242c2f2edbeb6440e25b4250fab42d7f/classes.dex" />
+        sha1="f8e8e27fd5c40f569cce85f65be90de7fb5be663">
+        <dex dex="/Users/iosuser11/Desktop/uresAnahit/ORBDemo2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_6431eb5326071b58fbb33a5d76745013958490ce/classes.dex" />
     </item>
     <item
-        jar="/Users/iosuser12/AndroidStudioProjects/ORBDemo2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/iosuser11/Desktop/uresAnahit/ORBDemo2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="e74af038e52d1bbc905304b2a896494c70f4d83a">
-        <dex dex="/Users/iosuser12/AndroidStudioProjects/ORBDemo2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_a5863ee323971759462c9ace043c9727688b0b35/classes.dex" />
+        sha1="9ed166140c9103112662d140cc86b09c3c216733">
+        <dex dex="/Users/iosuser11/Desktop/uresAnahit/ORBDemo2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_04e2a4183505e6c949240ba6cfa4b20bf6cd2712/classes.dex" />
     </item>
     <item
-        jar="/Users/iosuser12/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="/Users/iosuser12/AndroidStudioProjects/ORBDemo2/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.0.0_0dde4ccfb27e74d0e9a3fa1ec3ab59487073f312/classes.dex" />
-    </item>
-    <item
-        jar="/Users/iosuser12/AndroidStudioProjects/ORBDemo2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="12c26e4b675f865ca97e3a02c6c79a2f23ffe5eb">
-        <dex dex="/Users/iosuser12/AndroidStudioProjects/ORBDemo2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_907a7ac046d471b142741e0064c5f79d5effb99a/classes.dex" />
-    </item>
-    <item
-        jar="/Users/iosuser12/AndroidStudioProjects/ORBDemo2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="/Users/iosuser12/AndroidStudioProjects/ORBDemo2/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_7b124dec9a4a82b4098ff003efa487e746802760/classes.dex" />
-    </item>
-    <item
-        jar="/Users/iosuser12/AndroidStudioProjects/ORBDemo2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/classes.jar"
+        jar="/Users/iosuser11/Desktop/uresAnahit/ORBDemo2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/classes.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="/Users/iosuser12/AndroidStudioProjects/ORBDemo2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.0.0_675b8cdeaf08dadcc684f2b550068ae4f6f5ff62/classes.dex" />
+        <dex dex="/Users/iosuser11/Desktop/uresAnahit/ORBDemo2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.0.0_0e2235729b8b54f75b96b09a98a9241cf1848a70/classes.dex" />
+    </item>
+    <item
+        jar="/Users/iosuser11/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="/Users/iosuser11/Desktop/uresAnahit/ORBDemo2/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.0.0_3e63cf52eca71fa4eadeda83a0402d12ed215d93/classes.dex" />
+    </item>
+    <item
+        jar="/Users/iosuser11/Desktop/uresAnahit/ORBDemo2/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="/Users/iosuser11/Desktop/uresAnahit/ORBDemo2/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_0fcc52a233479f4df8e0473a9a2964b3ff8ab96b/classes.dex" />
+    </item>
+    <item
+        jar="/Users/iosuser11/Desktop/uresAnahit/ORBDemo2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="/Users/iosuser11/Desktop/uresAnahit/ORBDemo2/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.0.0_594b14a757ae9b31e92275cc73bed0d41422ccea/classes.dex" />
     </item>
 
 </items>
