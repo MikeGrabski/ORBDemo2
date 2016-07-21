@@ -84,6 +84,7 @@ public class MainActivity extends Activity{
             }
         });
         setPreviewFormat();
+        cameraPreview.startPreview();
         cameraView.addView(cameraPreview);
         }
 
@@ -120,14 +121,7 @@ public class MainActivity extends Activity{
         MatOfDMatch matches = new MatOfDMatch();
         matcher.match(descriptors1,descriptors2,matches);
         //feature and connection colors
-        Scalar RED = new Scalar(255,0,0);
-        Scalar GREEN = new Scalar(0,255,0);
-        //output image
-        Mat outputImg = new Mat();
-        MatOfByte drawnMatches = new MatOfByte();
-        //this will draw all matches, works fine
-        Features2d.drawMatches(img1, keypoints1, img2, keypoints2, matches,
-                outputImg, GREEN, RED,  drawnMatches, Features2d.NOT_DRAW_SINGLE_POINTS);
+
 
     }
 

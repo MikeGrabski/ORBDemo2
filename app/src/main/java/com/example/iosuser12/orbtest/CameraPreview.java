@@ -85,9 +85,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         return mCamera.getParameters().getPreviewFormat();
     }
 
-    int getPreviewHeight() {
-        return mCamera.getParameters().getPreviewSize().height;
-    }
+    int getPreviewHeight() { return mCamera.getParameters().getPreviewSize().height; }
 
     int getPreviewWidth() {
         return mCamera.getParameters().getPreviewSize().width;
