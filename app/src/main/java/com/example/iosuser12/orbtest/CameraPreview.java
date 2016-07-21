@@ -11,6 +11,7 @@ import android.view.SurfaceView;
 import android.view.ViewGroup;
 
 import java.io.IOException;
+import java.util.List;
 
 
 public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
@@ -85,6 +86,13 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     int getPreviewWidth() {
         return mCamera.getParameters().getPreviewSize().width;
     }
-
+    List<Integer> getSupportedPreiewFormats(){
+        return mCamera.getParameters().getSupportedPreviewFormats();
+    }
+    void setPreviewFormat(int previewFormat){
+        Camera.Parameters params = mCamera.getParameters();
+        params.setPreviewFormat(previewFormat);
+        mCamera.setParameters(params);
+    }
 
 }

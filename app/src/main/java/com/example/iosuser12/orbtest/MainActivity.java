@@ -38,14 +38,14 @@ public class MainActivity extends Activity{
     byte[] currentPhoto;
     int width;
     int height;
-
+    private int previewFormat;
 
     FeatureDetector detector;
     DescriptorExtractor descriptor;
+
+
+
     DescriptorMatcher matcher;
-
-
-
     Mat img1;
     Mat descriptors1;
     MatOfKeyPoint keypoints1;
@@ -82,6 +82,13 @@ public class MainActivity extends Activity{
 
         cameraView.addView(cameraPreview);
         }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        previewFormat = cameraPreview.getPreviewFormat();
+
+    }
 
     private void startTracking() {
         if(currentPhoto==null)
