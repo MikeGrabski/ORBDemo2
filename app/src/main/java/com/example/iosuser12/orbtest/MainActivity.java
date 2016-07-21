@@ -49,7 +49,6 @@ public class MainActivity extends Activity{
     DescriptorExtractor descriptor;
 
 
-
     DescriptorMatcher matcher;
     Mat img1;
     Mat descriptors1;
