@@ -24,6 +24,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         super(context);
         this.setLayoutParams(new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         mCamera = Camera.open();
+        mCamera.setDisplayOrientation(90);
 
         mHolder = getHolder();
         mHolder.addCallback(this);
@@ -76,4 +77,14 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     int getPreviewFormat() {
         return mCamera.getParameters().getPreviewFormat();
     }
+
+    int getPreviewHeight() {
+        return mCamera.getParameters().getPreviewSize().height;
+    }
+
+    int getPreviewWidth() {
+        return mCamera.getParameters().getPreviewSize().width;
+    }
+
+
 }
