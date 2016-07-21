@@ -13,4 +13,6 @@ public class PicturePreview extends GLSurfaceView {
         super(context);
         this.setLayoutParams(new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
     }
+
+
 }
