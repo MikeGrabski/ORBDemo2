@@ -1,6 +1,7 @@
 package com.example.iosuser12.orbtest;
 
 import android.app.Activity;
+import android.graphics.ImageFormat;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +22,9 @@ import org.opencv.features2d.DescriptorMatcher;
 import org.opencv.features2d.FeatureDetector;
 import org.opencv.features2d.Features2d;
 import org.opencv.imgcodecs.Imgcodecs;
+
+import java.util.Iterator;
+import java.util.List;
 
 
 /**
@@ -79,7 +83,7 @@ public class MainActivity extends Activity{
                 startTracking();
             }
         });
-
+        setPreviewFormat();
         cameraView.addView(cameraPreview);
         }
 
@@ -89,7 +93,18 @@ public class MainActivity extends Activity{
         previewFormat = cameraPreview.getPreviewFormat();
 
     }
+    private void setPreviewFormat(){
+        List<Integer> format = cameraPreview.getSupportedPreiewFormats();
+        for (int i = 0; i < format.size(); i++){
+            if(format.get(i)== ImageFormat.NV21) {
+                previewFormat = ImageFormat.NV21;
+            }
+        }
+        if(previewFormat != ImageFormat.NV21)
+            Toast.makeText(getApplicationContext(),"Your phone not supported yet", Toast.LENGTH_LONG).show();
+        cameraPreview.setPreviewFormat(previewFormat);
 
+    }
     private void startTracking() {
         if(currentPhoto==null)
         {
