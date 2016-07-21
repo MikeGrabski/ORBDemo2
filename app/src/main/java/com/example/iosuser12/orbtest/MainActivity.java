@@ -132,5 +132,6 @@ public class MainActivity extends Activity{
         detector.detect(img1, keypoints1);
         descriptor.compute(img1, keypoints1, descriptors1);
     }
+    //change
 
 }
