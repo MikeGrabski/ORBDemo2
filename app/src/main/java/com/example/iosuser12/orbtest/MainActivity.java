@@ -2,6 +2,7 @@ package com.example.iosuser12.orbtest;
 
 import android.app.Activity;
 import android.graphics.ImageFormat;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +25,7 @@ import org.opencv.features2d.FeatureDetector;
 import org.opencv.features2d.Features2d;
 import org.opencv.imgcodecs.Imgcodecs;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -48,6 +50,8 @@ public class MainActivity extends Activity{
     FeatureDetector detector;
     DescriptorExtractor descriptor;
 
+    int matchnumber;
+
 
     DescriptorMatcher matcher;
     Mat img1;
@@ -65,6 +69,7 @@ public class MainActivity extends Activity{
         setContentView(R.layout.layout_main);
         if(OpenCVLoader.initDebug())
             Log.d("","exav");
+        matchnumber = 0;
         capture = (Button)findViewById(R.id.captureFrame);
         startTracking  = (Button)findViewById(R.id.startTracking);
         cameraView = (FrameLayout)findViewById(R.id.cameraView);
@@ -111,9 +116,10 @@ public class MainActivity extends Activity{
             Toast.makeText(getApplicationContext(),"Please Capture First!",Toast.LENGTH_SHORT).show();
             return;
         }
+        MatchImages matchImages = new MatchImages();
 
-        while(true) {
-            img2.put(0, 0, cameraPreview.getCurrentFrame());
+           matchImages.execute();
+            /*img2.put(0, 0, cameraPreview.getCurrentFrame());
             detector.detect(img2, keypoints2);
             descriptor.compute(img2, keypoints2, descriptors2);
 
@@ -122,20 +128,20 @@ public class MainActivity extends Activity{
             matcher.match(descriptors1, descriptors2, matches);
             List<DMatch> match = matches.toList();
             numOfMatches.setText("Number of Matches: " + match.size());
-            //feature and connection colors
-        }
-
+            //feature and connection colors*/
     }
 
     private void capture() {
         detector = FeatureDetector.create(FeatureDetector.ORB);
         descriptor = DescriptorExtractor.create(DescriptorExtractor.ORB);;
-        matcher = DescriptorMatcher.create(DescriptorMatcher.BRUTEFORCE_HAMMING);
+        matcher = DescriptorMatcher.create(DescriptorMatcher.BRUTEFORCE_HAMMINGLUT);
 
         width = cameraPreview.getPreviewWidth();
         height = cameraPreview.getPreviewHeight();
         //first image
         currentPhoto = cameraPreview.getCurrentFrame();
+        Log.d("Photo: ", ""+currentPhoto[564]);
+
         img1 = new Mat(width, height, CvType.CV_8UC3);
         img1.put(0,0,currentPhoto);
         descriptors1 = new Mat();
@@ -149,7 +155,68 @@ public class MainActivity extends Activity{
 
         detector.detect(img1, keypoints1);
         descriptor.compute(img1, keypoints1, descriptors1);
+
     }
     //change
+    private class MatchImages extends AsyncTask<Void,Void,Integer>{
 
+        @Override
+        protected Integer doInBackground(Void... voids) {
+
+            matchImages();
+            return  null;
+        }
+
+        @Override
+        protected void onPostExecute(Integer integer) {
+            super.onPostExecute(integer);
+            numOfMatches.setText("NumOfMatches: " + matchnumber);
+        }
+    }
+    public void matchImages(){
+        while(true) {
+            byte[] data = cameraPreview.getCurrentFrame();
+            Log.d("Photo: " , "" + data[564]);
+            img2.put(0, 0, data);
+
+            Log.d("mmages: ", "got current frame");
+            detector.detect(img2, keypoints2);
+            Log.d("mmages: ", "detected keypoints");
+            descriptor.compute(img2, keypoints2, descriptors2);
+            Log.d("mmages: ", "got descriptors");
+    //matcher should include 2 different image's descriptors
+            MatOfDMatch matches = new MatOfDMatch();
+            matcher.match(descriptors1, descriptors2, matches);
+
+
+            int DIST_LIMIT = 60;
+            List<DMatch> matchesList = matches.toList();
+            List<DMatch> matches_final= new ArrayList<DMatch>();
+            for(int i=0; i<matchesList.size(); i++) {
+                if (matchesList.get(i).distance <= DIST_LIMIT) {
+                    matches_final.add(matches.toList().get(i));
+                }
+            }
+
+            matchnumber = matches_final.size();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    numOfMatches.setText("Number of Matches: "+matchnumber);
+
+                }
+            });
+
+
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        //return matches.toList().size();
+
+    }
 }

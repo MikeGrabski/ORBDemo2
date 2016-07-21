@@ -47,15 +47,21 @@
     android:layout_alignTop="@+id/buttonLayout"
     android:background="#55ffffff">
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="156dp"
+        android:layout_height="55dp"
         android:id="@+id/numOfMatches"
-        />
+        android:text="asdf" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/isSameObject"
-        />
+        android:text="asdfghghjjkkl"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/buttonLayout"
+        android:layout_below="@+id/resultLayout"
+        android:layout_alignRight="@+id/resultLayout"
+        android:layout_alignEnd="@+id/resultLayout" />
 </LinearLayout>
 
 </RelativeLayout>

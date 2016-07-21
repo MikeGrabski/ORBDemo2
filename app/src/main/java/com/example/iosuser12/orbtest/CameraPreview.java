@@ -69,11 +69,13 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
     @Override
     public void onPreviewFrame(byte[] bytes, Camera camera) {
-        if(frameread == true) {
-            frameread = false;
-            data = bytes;
-            frameread = true;
-        }
+//        if(frameread == true) {
+//            frameread = false;
+//            data = bytes;
+//            frameread = true;
+//        }
+        data = bytes;
+
     }
 
     void startPreview() {
