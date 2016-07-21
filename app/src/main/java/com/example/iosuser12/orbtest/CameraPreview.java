@@ -20,12 +20,17 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     private byte[] data;
     private Camera.PreviewCallback previewCallback;
     private boolean frameread;
+    private Camera.Parameters params;
 
     public CameraPreview(Context context) {
         super(context);
-        this.setLayoutParams(new ActionBar.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
         mCamera = Camera.open();
+        params = mCamera.getParameters();
+        params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+        mCamera.setParameters(params);
         mCamera.setDisplayOrientation(90);
+        this.setLayoutParams(new ActionBar.LayoutParams(mCamera.getParameters().getPreviewSize().height, mCamera.getParameters().getPreviewSize().width));
 
         mHolder = getHolder();
         mHolder.addCallback(this);
