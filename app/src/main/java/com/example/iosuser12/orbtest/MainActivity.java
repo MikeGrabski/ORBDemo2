@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.CvType;
+import org.opencv.core.DMatch;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
 import org.opencv.core.MatOfDMatch;
@@ -112,16 +113,18 @@ public class MainActivity extends Activity{
             Toast.makeText(getApplicationContext(),"Please Capture First!",Toast.LENGTH_SHORT).show();
         }
 
+        while(true) {
+            img2.put(0, 0, cameraPreview.getCurrentFrame());
+            detector.detect(img2, keypoints2);
+            descriptor.compute(img2, keypoints2, descriptors2);
 
-        img2.put(0,0,cameraPreview.getCurrentFrame());
-        detector.detect(img2, keypoints2);
-        descriptor.compute(img2, keypoints2, descriptors2);
-
-        //matcher should include 2 different image's descriptors
-        MatOfDMatch matches = new MatOfDMatch();
-        matcher.match(descriptors1,descriptors2,matches);
-        //feature and connection colors
-
+            //matcher should include 2 different image's descriptors
+            MatOfDMatch matches = new MatOfDMatch();
+            matcher.match(descriptors1, descriptors2, matches);
+            List<DMatch> match = matches.toList();
+            numOfMatches.setText("Number of Matches: " + match.size());
+            //feature and connection colors
+        }
 
     }
 
@@ -130,8 +133,8 @@ public class MainActivity extends Activity{
         descriptor = DescriptorExtractor.create(DescriptorExtractor.ORB);;
         matcher = DescriptorMatcher.create(DescriptorMatcher.BRUTEFORCE_HAMMING);
 
-        width = cameraPreview.getWidth();
-        height = cameraPreview.getHeight();
+        width = cameraPreview.getPreviewWidth();
+        height = cameraPreview.getPreviewHeight();
         //first image
         currentPhoto = cameraPreview.getCurrentFrame();
         img1 = new Mat(width, height, CvType.CV_8UC3);
