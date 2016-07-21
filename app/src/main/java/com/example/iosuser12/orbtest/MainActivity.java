@@ -85,14 +85,13 @@ public class MainActivity extends Activity{
             }
         });
         setPreviewFormat();
-        cameraPreview.startPreview();
         cameraView.addView(cameraPreview);
+        cameraPreview.startPreview();
         }
 
     @Override
     protected void onStart() {
         super.onStart();
-        previewFormat = cameraPreview.getPreviewFormat();
 
     }
     private void setPreviewFormat(){
@@ -111,6 +110,7 @@ public class MainActivity extends Activity{
         if(currentPhoto==null)
         {
             Toast.makeText(getApplicationContext(),"Please Capture First!",Toast.LENGTH_SHORT).show();
+            return;
         }
 
         while(true) {
