@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_weight="100"
     >
-    <FrameLayout
+<FrameLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/cameraView"
@@ -14,7 +14,7 @@
     >
 
 </FrameLayout>
-    <LinearLayout
+<LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -23,6 +23,7 @@
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true"
     android:background="#55ffffff">
+
     <Button
         android:layout_width="150dp"
         android:layout_height="wrap_content"
@@ -33,21 +34,10 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Start Tracking"
-        android:id="@+id/startTracking"
-        android:visibility="gone"/>
+        android:id="@+id/startTracking" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:text="Stop Tracking"
-            android:layout_height="wrap_content"
-            android:id="@+id/stopTracking"
-            android:layout_alignBottom="@+id/buttonLayout"
-            android:layout_toRightOf="@+id/buttonLayout"
-            android:layout_toEndOf="@+id/buttonLayout"
-            android:visibility="gone"
-            />
-    </LinearLayout>
-    <LinearLayout
+</LinearLayout>
+<LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_weight="20"
@@ -55,24 +45,25 @@
     android:id="@+id/resultLayout"
     android:layout_toRightOf="@+id/buttonLayout"
     android:layout_alignTop="@+id/buttonLayout"
-    android:background="#55ffffff">
+    android:background="#55ffffff"
+    android:layout_alignParentStart="false"
+    android:layout_alignParentEnd="false"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true">
     <TextView
         android:layout_width="156dp"
-        android:layout_height="50dp"
-        android:id="@+id/numOfMatches"
-        android:text="" />
+        android:layout_height="55dp"
+        android:id="@+id/numOfMatches" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/averageTimePerFrame"
-        android:text=""
+        android:id="@+id/isSameObject"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/buttonLayout"
         android:layout_below="@+id/resultLayout"
         android:layout_alignRight="@+id/resultLayout"
         android:layout_alignEnd="@+id/resultLayout" />
 </LinearLayout>
-
 
 </RelativeLayout>
