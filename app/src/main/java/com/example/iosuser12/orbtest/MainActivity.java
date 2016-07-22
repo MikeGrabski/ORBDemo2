@@ -217,7 +217,7 @@ public class MainActivity extends Activity{
             }
             matchnumber = count;
             long endTime = System.currentTimeMillis();
-            elapsedTime+=(startTime-endTime);
+            elapsedTime+=(endTime-startTime);
             frameCount++;
             runOnUiThread(new Runnable() {
                 @Override
