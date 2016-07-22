@@ -84,7 +84,7 @@ public class MainActivity extends Activity{
         matchnumber = 0;
         capture = (Button)findViewById(R.id.captureFrame);
         startTracking  = (Button)findViewById(R.id.startTracking);
-        stopTracking = (Button)findViewById(R.id.stopTracking); 
+        //stopTracking = (Button)findViewById(R.id.stopTracking);
         cameraView = (FrameLayout)findViewById(R.id.cameraView);
         numOfMatches = (TextView)findViewById(R.id.numOfMatches);
         averageTimePerFrameTextView = (TextView)findViewById(R.id.averageTimePerFrame);
@@ -101,12 +101,12 @@ public class MainActivity extends Activity{
                 startTracking();
             }
         });
-        stopTracking.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+//        stopTracking.setOnClickListener(new View.OnClickListener() {
+  //          @Override
+    ///        public void onClick(View view) {
                 stopTracking();
-            }
-        });
+       //     }
+        //});
         setPreviewFormat();
         cameraView.addView(cameraPreview);
         cameraPreview.startPreview();
@@ -130,7 +130,7 @@ public class MainActivity extends Activity{
             return;
         }
         startTracking.setVisibility(Button.GONE);
-        stopTracking.setVisibility(Button.VISIBLE);
+        //stopTracking.setVisibility(Button.VISIBLE);
         MatchImages matchImages = new MatchImages();
         matchImages.execute();
     }
@@ -138,7 +138,7 @@ public class MainActivity extends Activity{
 
         stopTrackingNow = true;
         averageTimePerFrameTextView.setText("Avg Time per Frame: "+(double)elapsedTime / (double)frameCount + " ms");
-        stopTracking.setVisibility(Button.GONE);
+       // stopTracking.setVisibility(Button.GONE);
 
         capture.setVisibility(Button.VISIBLE);
         elapsedTime = 0;
